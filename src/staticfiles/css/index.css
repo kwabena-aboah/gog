@@ -1,0 +1,68 @@
+body {
+    background-color: #26a69a;
+}
+
+.section {
+    background-color: aliceblue;
+}
+
+footer {
+    background-color: aliceblue;
+}
+
+.clip {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 90px;
+    height: 90px;
+}
+
+.clip h2 { width: 90%; height: 90%; }
+
+@keyframes clipMe {
+    0%, 100% { clip: rect(0, 100px, 2px, 0); }
+    25% { clip: rect(0, 2px, 100px, 0); }
+    50% { clip: rect(98px, 100px, 100px, 0); }
+    75% { clip: rect(0, 100px, 100px, 98px); }
+}
+
+.clip::before,
+.clip::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    margin: -5%;
+    box-shadow: inset 0 0 0 2px #26a69a;
+    animation: clipMe 3s linear infinite;
+}
+
+.clip::before { animation-delay: -1.5s; }
+
+@keyframes move {
+    100% {
+        transform: translateY(-75rem);
+    }
+}
+
+.wrapper {
+    animation: move 20s infinite ease-in-out;
+}
+
+@keyframes fly {
+    0%,
+    70%,
+    100% {
+        transform: rotate(0);
+    }
+    60% {
+        transform: translateX(-2.5rem) rotate(-6deg);
+    }
+}
+
+.godzilla {
+    animation: fly 1s infinite;
+}

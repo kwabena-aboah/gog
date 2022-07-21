@@ -1,0 +1,26 @@
+{% load static %}
+<html !Doctype>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Government of Ghana</title>
+        <link href="{% static 'css/all.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}" media="screen,projection">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+        <div id="app">
+            <main class="section">
+                {% block content %}{% endblock %}
+            </main>
+            <footer>
+                <div class="container">
+                    <center>
+                        <p>Made with <span class="red-text darken-4">&hearts;</span></p>
+                    </center>
+                </div>
+            </footer>
+        </div>
+        {% block footer %}
+            {% include 'report/footer.html' %}
+        {% endblock %}
+    </body>
+</html>
